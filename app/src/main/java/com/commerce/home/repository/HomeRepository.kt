@@ -5,6 +5,4 @@ import javax.inject.Inject
 
 class HomeRepository @Inject constructor(
 
-) : BaseRepository() {
-
-}
+) : BaseRepository() {}

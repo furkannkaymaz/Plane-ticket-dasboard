@@ -8,7 +8,6 @@ import com.commerce.databinding.FragmentHomeBinding
 import com.commerce.home.viewmodel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
-
 class HomeFragment : BaseFragment<FragmentHomeBinding,HomeViewModel>(){
 
     override val viewModel by viewModels<HomeViewModel>()
@@ -19,7 +18,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding,HomeViewModel>(){
     override fun onCreateFinished() {
 
     }
-
     override fun layoutResource(
         inflater: LayoutInflater,
         container: ViewGroup?
