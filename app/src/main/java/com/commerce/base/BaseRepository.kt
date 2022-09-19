@@ -2,9 +2,14 @@ package com.commerce.base
 
 
 import com.commerce.utils.Resource
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException
+import javax.inject.Singleton
 
 abstract class BaseRepository {
 
@@ -19,9 +24,8 @@ abstract class BaseRepository {
                         Resource.Error("Hata",null,false) // api faill
                     }
                     else -> { Resource.Error("Hata",null,true)
-
-
-                    } // network error
+                        // network error
+                    }
                 }
             }
         }
