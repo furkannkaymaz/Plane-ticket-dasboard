@@ -1,11 +1,11 @@
-package com.commerce.home.view
+package com.commerce.ui.home.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.commerce.base.BaseFragment
 import com.commerce.databinding.FragmentHomeBinding
-import com.commerce.home.viewmodel.HomeViewModel
+import com.commerce.ui.home.viewmodel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

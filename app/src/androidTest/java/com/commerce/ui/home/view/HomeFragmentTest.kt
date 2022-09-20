@@ -1,4 +1,4 @@
-package com.commerce.home.view
+package com.commerce.ui.home.view
 
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.navigation.NavController

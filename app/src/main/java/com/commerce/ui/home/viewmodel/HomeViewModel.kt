@@ -1,17 +1,13 @@
-package com.commerce.home.viewmodel
+package com.commerce.ui.home.viewmodel
 
-import android.app.Application
 import android.content.Context
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.commerce.data.model.FlightModel
 import com.commerce.data.repository.HomeRepository
-import com.commerce.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
