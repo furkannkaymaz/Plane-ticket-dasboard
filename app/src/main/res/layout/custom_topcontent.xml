@@ -1,16 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="wrap_content">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/contentTop"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@color/black"
-        app:layout_constraintTop_toTopOf="parent">
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:scaleType="center"
+        android:src="@drawable/ic_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tvRoute"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/tvRoute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:fontFamily="@font/averta_semibold"
+        android:padding="5dp"
+        android:text="İstanbul  >  Amsterdam"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@id/tvOneOrTwoDirection"
+        app:layout_constraintStart_toEndOf="@id/ivBack"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/tvOneOrTwoDirection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:padding="5dp"
+        android:text="Tek yön"
+        android:textColor="@color/black"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivBack"
+        app:layout_constraintTop_toBottomOf="@id/tvRoute" />
+
+    <ImageView
+        android:id="@+id/ivPen"
+        android:layout_width="13dp"
+        android:layout_height="13dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_edit"
+        app:layout_constraintBottom_toBottomOf="@id/tvRoute"
+        app:layout_constraintStart_toEndOf="@id/tvRoute"
+        app:layout_constraintTop_toTopOf="@id/tvRoute" />
+
+    <TextView
+        android:id="@+id/tvPersonCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="1"
+        android:textColor="@color/black"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="@id/ivPersonCount"
+        app:layout_constraintStart_toEndOf="@id/ivPersonCount"
+        app:layout_constraintTop_toTopOf="@id/ivPersonCount" />
+
+    <ImageView
+        android:id="@+id/ivPersonCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_person"
+        app:layout_constraintEnd_toStartOf="@id/tvPersonCount"
+        app:layout_constraintBottom_toBottomOf="@id/tvOneOrTwoDirection"
+        app:layout_constraintStart_toEndOf="@id/tvOneOrTwoDirection"
+        app:layout_constraintTop_toTopOf="@id/tvOneOrTwoDirection" />
+
+
+    <ImageView
+        android:id="@+id/ivShare"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
+        android:layout_margin="5dp"
+        android:scaleType="center"
+        android:src="@drawable/ic_share"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivLike"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
+        android:layout_margin="5dp"
+        android:scaleType="center"
+        android:src="@drawable/ic_fav"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ivShare"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

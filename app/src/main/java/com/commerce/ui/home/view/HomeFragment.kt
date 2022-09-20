@@ -14,6 +14,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding,HomeViewModel>(){
     override val viewModel by viewModels<HomeViewModel>()
 
     override fun configureUiItems() {
+        binding?.tbDate?.newTab()?.setText("Önceki Gün \n 1.450 TL")?.let { binding?.tbDate?.addTab(it) };
+        binding?.tbDate?.newTab()?.setText("Önceki Gün \n 1.450 TL")?.let { binding?.tbDate?.addTab(it) };
+        binding?.tbDate?.newTab()?.setText("Önceki Gün \n 1.450 TL")?.let { binding?.tbDate?.addTab(it) };
+
     }
 
     override fun onCreateFinished() {
