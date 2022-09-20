@@ -1,19 +1,37 @@
 package com.commerce.ui.home.view
 
+import android.os.Build
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import androidx.test.espresso.Espresso
-import androidx.test.espresso.assertion.ViewAssertions
-import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.commerce.R
+import dagger.hilt.android.testing.HiltAndroidRule
+import dagger.hilt.android.testing.HiltAndroidTest
+import dagger.hilt.android.testing.HiltTestApplication
+import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mockito.mock
+import org.robolectric.RobolectricTestRunner
+import org.robolectric.annotation.Config
 
-@RunWith(AndroidJUnit4::class)
-class HomeFragmentTest {
+
+@HiltAndroidTest
+@Config(
+    manifest = Config.NONE,
+    sdk = [Build.VERSION_CODES.O_MR1],
+    application = HiltTestApplication::class
+)
+class SettingsActivityTest {
+
+    @get:Rule
+    var hiltRule = HiltAndroidRule(this)
+
+    @Before
+    fun init() {
+        hiltRule.inject()
+    }
 
     @Test
     fun testNavigation() {
@@ -26,13 +44,5 @@ class HomeFragmentTest {
         //   Espresso.onView(ViewMatchers.withId(R.id.btnGoSecond)).perform(ViewActions.click())
         //   verify(mockNavController).navigate(FragmentDirections.actionFragment())
         //   use 2 line to check navigate navController
-    }
-
-    @Test
-    fun testTextView() {
-        launchFragmentInContainer<HomeFragment>().onFragment {}
-
-        Espresso.onView(ViewMatchers.withId(R.id.tvHello))
-            .check(ViewAssertions.matches(ViewMatchers.withText("Hello")))
     }
 }
