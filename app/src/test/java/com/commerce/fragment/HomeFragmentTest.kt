@@ -41,9 +41,7 @@ class HomeFragmentTest {
 
     @Test
     fun homeFragmentTest() {
-        val mockNavController = mock(NavController::class.java)
         launchFragmentInHiltContainer<HomeFragment> {
-            Navigation.setViewNavController(this.requireView(), mockNavController)
         }
     }
 }
