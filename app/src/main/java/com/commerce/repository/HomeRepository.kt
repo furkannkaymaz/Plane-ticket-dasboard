@@ -1,4 +1,4 @@
-package com.commerce.home.repository
+package com.commerce.repository
 
 import com.commerce.base.BaseRepository
 import javax.inject.Inject

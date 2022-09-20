@@ -13,7 +13,6 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mockito
 
-
 @RunWith(AndroidJUnit4::class)
 class HomeFragmentTest {
 
