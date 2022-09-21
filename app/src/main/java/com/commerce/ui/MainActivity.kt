@@ -1,11 +1,9 @@
-package com.commerce
+package com.commerce.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import dagger.Module
-import dagger.hilt.InstallIn
+import com.commerce.R
 import dagger.hilt.android.AndroidEntryPoint
-import dagger.hilt.components.SingletonComponent
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
