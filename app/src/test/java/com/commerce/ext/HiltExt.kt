@@ -1,4 +1,4 @@
-package com.espressosample
+package com.commerce.ext
 
 import android.content.ComponentName
 import android.content.Intent
