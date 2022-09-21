@@ -5,10 +5,10 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginVertical="5dp"
+    android:paddingVertical="10dp"
+    android:layout_marginVertical="8dp"
     android:background="@drawable/rounded_shadow"
-    android:paddingHorizontal="7dp"
-    android:paddingVertical="5dp">
+    android:paddingHorizontal="8dp">
 
     <ImageView
         android:id="@+id/ivCompany"
@@ -25,7 +25,6 @@
         android:layout_marginStart="10dp"
         android:fontFamily="@font/averta_semibold"
         android:gravity="center"
-        android:text="Hava Yolu"
         app:layout_constraintStart_toEndOf="@+id/ivCompany"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,7 +36,6 @@
         android:layout_marginTop="10dp"
         android:fontFamily="@font/averta_semibold"
         android:gravity="center"
-        android:text="SAW > AMS"
         app:layout_constraintStart_toStartOf="@+id/ivCompany"
         app:layout_constraintTop_toBottomOf="@id/ivCompany" />
 
@@ -61,7 +59,6 @@
         android:layout_marginEnd="10dp"
         android:fontFamily="@font/averta_bold"
         android:gravity="center"
-        android:text="tvPrice"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/IvNext"
         app:layout_constraintTop_toTopOf="@id/tvDeparture" />
@@ -82,7 +79,6 @@
             android:layout_gravity="center"
             android:fontFamily="@font/averta_bold"
             android:gravity="center"
-            android:text="Time"
             android:textSize="16sp" />
 
         <ImageView
@@ -95,13 +91,12 @@
             tools:ignore="UseAppTint" />
 
         <TextView
-            android:id="@+id/arrivalTime"
+            android:id="@+id/tvArivalTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginEnd="10dp"
-            android:gravity="center"
-            android:text="Time" />
+            android:gravity="center" />
 
     </LinearLayout>
 
@@ -125,7 +120,6 @@
         android:layout_marginStart="10dp"
         android:fontFamily="@font/averta_semibold"
         android:gravity="center"
-        android:text="Type"
         android:textColor="@color/ivGreen"
         app:layout_constraintBottom_toBottomOf="@+id/ivDetail"
         app:layout_constraintStart_toEndOf="@+id/ivDetail"
@@ -139,7 +133,6 @@
         android:layout_marginStart="20dp"
         android:fontFamily="@font/averta_semibold"
         android:gravity="center"
-        android:text="Baggage"
         app:layout_constraintBottom_toBottomOf="@+id/ivDetail"
         app:layout_constraintStart_toEndOf="@+id/tvFlyType"
         app:layout_constraintTop_toTopOf="@id/ivDetail" />

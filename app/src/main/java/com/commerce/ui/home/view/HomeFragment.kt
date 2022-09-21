@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.commerce.R
 import com.commerce.base.BaseFragment
+import com.commerce.data.model.Airline
 import com.commerce.databinding.FragmentHomeBinding
 import com.commerce.ui.home.adapter.HomeAdapter
 import com.commerce.ui.home.viewmodel.HomeViewModel
@@ -21,8 +22,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
     private lateinit var adapter: HomeAdapter
 
     override fun configureUiItems() {
-        bindRecycleView()
         tabLayoutConfigure()
+        bindRecycleView()
 
     }
 
@@ -34,8 +35,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
     override fun observerData() {
         super.observerData()
         viewModel.getData.observe(viewLifecycleOwner) {
+            passAirlineData(it?.data?.airlines)
             adapter.set(it?.data?.flights?.departure)
             adapter.notifyDataSetChanged()
+
         }
         viewModel.error.observe(viewLifecycleOwner) {
             context?.toast(getString(R.string.unExpectedError))
@@ -44,6 +47,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
 
         }
     }
+
 
     private fun tabLayoutConfigure() {
         binding?.tbDate?.newTab()?.setText("Önceki Gün \n 1.450 TL")
@@ -60,9 +64,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
             RecyclerView.VERTICAL,
             false
         )
-        adapter = HomeAdapter {}
-        binding?.rvFlights?.adapter = adapter
 
+    }
+
+    private fun passAirlineData(airline: ArrayList<Airline?>?) {
+        adapter = HomeAdapter({}, airline)
+        binding?.rvFlights?.adapter = adapter
     }
 
     override fun layoutResource(

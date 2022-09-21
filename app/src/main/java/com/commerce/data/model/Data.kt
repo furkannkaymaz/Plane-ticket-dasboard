@@ -1,7 +1,7 @@
 package com.commerce.data.model
 
 data class Data(
-    val airlines: List<Airline>?,
+    val airlines: ArrayList<Airline?>?,
     val airports: List<Airport>?,
     val baggages: List<Int>?,
     val bus_search_data_tab: Any?,
