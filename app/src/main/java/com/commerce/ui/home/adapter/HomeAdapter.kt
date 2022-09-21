@@ -11,6 +11,7 @@ import com.commerce.data.model.Departure
 import com.commerce.data.model.FlightModel
 import com.commerce.databinding.ItemFlightBinding
 import com.commerce.utils.checkString
+import com.commerce.utils.editImageUrl
 import com.commerce.utils.extension.decode
 import com.commerce.utils.extension.loadImage
 
@@ -42,10 +43,10 @@ class HomeAdapter(
         airlines?.forEach {
             if (item.segments?.first()?.marketing_airline == it?.code) {
                 if (checkString(it?.name)) {
-                    holder.binding.tvAirlines.text = it?.name
+                    holder.binding.tvAirlines.text = decode(it?.name!!)
                 }
 
-                it?.image?.let { holder.binding.ivCompany.loadImage(it.replace("\\", "")) }
+                it?.image?.let { holder.binding.ivCompany.loadImage(editImageUrl(it)) }
             }
         }
 

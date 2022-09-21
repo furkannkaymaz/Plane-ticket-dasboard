@@ -1,5 +1,6 @@
 package com.commerce.utils.extension
 
+
 fun decode(text: String): String {
     var working = text
     var index: Int

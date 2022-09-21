@@ -58,7 +58,7 @@
         android:id="@+id/tvPersonCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+
         android:text="1"
         android:textColor="@color/black"
         android:textSize="12dp"
@@ -70,10 +70,10 @@
         android:id="@+id/ivPersonCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
         android:scaleType="fitCenter"
         android:src="@drawable/ic_person"
         app:layout_constraintBottom_toBottomOf="@id/tvOneOrTwoDirection"
-        app:layout_constraintEnd_toStartOf="@id/tvPersonCount"
         app:layout_constraintStart_toEndOf="@id/tvOneOrTwoDirection"
         app:layout_constraintTop_toTopOf="@id/tvOneOrTwoDirection" />
 

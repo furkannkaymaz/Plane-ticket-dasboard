@@ -16,3 +16,8 @@ fun checkArray(a: ArrayList<FlightModel?>?): Boolean {
     }
     return true
 }
+
+fun editImageUrl(s : String) : String{
+    return s.replace("\\", "")
+}
+

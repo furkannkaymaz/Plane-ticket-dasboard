@@ -37,7 +37,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
     override fun observerData() {
         super.observerData()
         viewModel.getData.observe(viewLifecycleOwner) {
-            if (checkArray(arrayListOf(it))){
+            if (checkArray(arrayListOf(it))) {
                 passAirlineData(it?.data?.airlines)
                 adapter.set(it?.data?.flights?.departure)
                 adapter.notifyDataSetChanged()
