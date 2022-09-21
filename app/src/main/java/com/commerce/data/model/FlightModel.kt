@@ -5,21 +5,21 @@ data class FlightModel (
 )
 
 data class Data (
-    val searchParameters: SearchParameters? = null,
-    val createdAt: String? = null,
+    val search_parameters: SearchParameters? = null,
+    val created_at: String? = null,
     val airlines: List<Airline>? = null,
     val airports: List<Airport>? = null,
-    val stopCounts: List<Long>? = null,
+    val stop_counts: List<Long>? = null,
     val baggages: List<Long>? = null,
-    val filterBoundaries: FilterBoundaries? = null,
-    val hasViFlight: Boolean? = null,
-    val infoMessage: Any? = null,
-    val searchURL: String? = null,
-    val shortSearchURL: String? = null,
+    val filter_boundaries: FilterBoundaries? = null,
+    val has_vi_Flight: Boolean? = null,
+    val info_message: Any? = null,
+    val search_URL: String? = null,
+    val shortSearch_url: String? = null,
     val currencies: Currencies? = null,
-    val busSearchDataTab: Any? = null,
+    val bus_search_data_tab: Any? = null,
     val flights: Flights? = null,
-    val priceHistory: PriceHistory? = null
+    val price_history: PriceHistory? = null
 )
 
 data class Airline (
@@ -32,14 +32,14 @@ data class Airline (
 data class Airport (
     val id: String? = null,
     val slug: String? = null,
-    val airportName: String? = null,
-    val cityCode: String? = null,
-    val cityName: String? = null,
-    val citySlug: String? = null,
-    val countryCode: String? = null,
-    val countryName: String? = null,
+    val airport_name: String? = null,
+    val city_code: String? = null,
+    val city_name: String? = null,
+    val city_slug: String? = null,
+    val country_code: String? = null,
+    val country_name: String? = null,
     val label: String? = null,
-    val isCity: Boolean? = null
+    val is_city: Boolean? = null
 )
 
 data class Currencies (
@@ -99,10 +99,10 @@ data class Currencies (
 )
 
 data class FilterBoundaries (
-    val departurePrice: Price? = null,
-    val returnPrice: Price? = null,
-    val departureMaxDuration: Long? = null,
-    val returnMaxDuration: Long? = null
+    val departure_price: Price? = null,
+    val return_price: Price? = null,
+    val departure_max_duration: Long? = null,
+    val return_max_duration: Long? = null
 )
 
 data class Price (
@@ -111,29 +111,29 @@ data class Price (
 )
 
 data class Flights (
-    val departure: List<DepartureElement>? = null
+    val departure: ArrayList<DepartureElement?>? = null
 )
 
 data class DepartureElement (
     val enuid: String? = null,
-    val priceBreakdown: PriceBreakdown? = null,
-    val averagePriceBreakdown: PriceBreakdown? = null,
+    val price_breakdown: PriceBreakdown? = null,
+    val average_price_breakdown: PriceBreakdown? = null,
     val infos: Infos? = null,
-    val providerPackages: List<Any?>? = null,
+    val provider_packages: List<Any?>? = null,
     val segments: List<Segment>? = null,
-    val differentAirlineCount: Long? = null
+    val different_airline_count: Long? = null
 )
 
 data class PriceBreakdown (
     val base: Double? = null,
     val tax: Double? = null,
     val service: Double? = null,
-    val reissueService: Long? = null,
+    val reissues_service: Long? = null,
     val total: Double? = null,
     val currency: Currency? = null,
     val discount: Long? = null,
-    val displayedCurrency: DisplayedCurrency? = null,
-    val internalAssurance: Long? = null,
+    val displayed_currency: DisplayedCurrency? = null,
+    val internal_assurance: Long? = null,
     val extraFee: Double? = null,
     val penalty: Long? = null
 )
@@ -147,19 +147,19 @@ enum class DisplayedCurrency {
 }
 
 data class Infos (
-    val isReservable: Boolean? = null,
-    val isPromo: Boolean? = null,
+    val is_reservable: Boolean? = null,
+    val is_promo: Boolean? = null,
     val duration: Duration? = null,
-    val baggageInfo: BaggageInfo? = null,
-    val isVirtualInterlining: Boolean? = null,
-    val isBusiness: Boolean? = null,
-    val activeWarning: Any? = null,
-    val isMaskRequired: Boolean? = null
+    val baggage_info: BaggageInfo? = null,
+    val is_virtual_interlining: Boolean? = null,
+    val is_business: Boolean? = null,
+    val active_warning: Any? = null,
+    val is_mask_required: Boolean? = null
 )
 
 data class BaggageInfo (
-    val carryOn: CarryOn? = null,
-    val firstBaggageCollection: List<FirstBaggageCollection>? = null
+    val carry_on: CarryOn? = null,
+    val first_baggage_collection: List<FirstBaggageCollection>? = null
 )
 
 data class CarryOn (
@@ -167,7 +167,7 @@ data class CarryOn (
     val type: Type? = null,
     val unit: Unit? = null,
     val part: Long? = null,
-    val isSmall: Boolean? = null
+    val is_small: Boolean? = null
 )
 
 enum class Type {
@@ -179,7 +179,7 @@ enum class Unit {
 }
 
 data class FirstBaggageCollection (
-    val paxType: PaxType? = null,
+    val pax_type: PaxType? = null,
     val allowance: Long? = null,
     val part: Long? = null,
     val unit: Unit? = null,
@@ -195,28 +195,28 @@ data class Duration (
     val day: Long? = null,
     val hour: Long? = null,
     val minute: Long? = null,
-    val totalMinutes: Long? = null
+    val total_Minutes: Long? = null
 )
 
 data class Segment (
-    val departureDatetime: Datetime? = null,
-    val displayDepartureDatetime: DisplayDatetime? = null,
-    val arrivalDatetime: Datetime? = null,
-    val displayArrivalDatetime: DisplayDatetime? = null,
-    val segmentClass: String? = null,
-    val flightNumber: String? = null,
+    val departure_datetime: Datetime? = null,
+    val display_departure_datetime: DisplayDatetime? = null,
+    val arrival_datetime: Datetime? = null,
+    val display_arrival_datetime: DisplayDatetime? = null,
+    val segment_class: String? = null,
+    val flightN_number: String? = null,
     val origin: String? = null,
     val destination: String? = null,
-    val marketingAirline: String? = null,
-    val operatingAirline: String? = null,
-    val availableSeats: Long? = null,
-    val originTerminal: String? = null,
-    val destinationTerminal: String? = null,
-    val segmentDelay: Duration? = null,
+    val marketing_airline: String? = null,
+    val operating_airline: String? = null,
+    val available_seats: Long? = null,
+    val origin_terminal: String? = null,
+    val destination_terminal: String? = null,
+    val segment_delay: Duration? = null,
     val duration: Duration? = null,
     val isTrain: Boolean? = null,
-    val segmentAttributes: SegmentAttributes? = null,
-    val isVirtualInterlining: Boolean? = null
+    val segment_attributes: SegmentAttributes? = null,
+    val is_virtual_interlining: Boolean? = null
 )
 
 data class Datetime (
@@ -236,12 +236,12 @@ enum class DisplayDatetime {
 }
 
 data class SegmentAttributes (
-    val freeMeal: Boolean? = null,
-    val seatPitch: String? = null,
-    val airplaneBrand: AirplaneBrand? = null,
+    val free_meal: Boolean? = null,
+    val seat_pitch: String? = null,
+    val airplane_brand: AirplaneBrand? = null,
     val entertainment: Entertainment? = null,
     val wifi: Long? = null,
-    val seatPlan: SeatPlan? = null
+    val seat_plan: SeatPlan? = null
 )
 
 enum class AirplaneBrand {
@@ -274,29 +274,29 @@ data class PriceHistoryDeparture (
 )
 
 data class SearchParameters (
-    val requestID: String? = null,
+    val request_id: String? = null,
     val provider: Any? = null,
     val origin: Airport? = null,
     val destination: Airport? = null,
     val origins: List<Airport>? = null,
     val destinations: List<Airport>? = null,
-    val departureDates: List<String>? = null,
-    val departureDate: String? = null,
-    val displayDepartureDate: String? = null,
-    val displayDepartureDates: List<String>? = null,
+    val departure_dates: List<String>? = null,
+    val departure_date: String? = null,
+    val display_departure_date: String? = null,
+    val display_departure_dates: List<String>? = null,
     val returnDate: Any? = null,
-    val displayReturnDate: Any? = null,
+    val display_return_date: Any? = null,
     val adult: Long? = null,
     val senior: Long? = null,
     val student: Long? = null,
     val child: Long? = null,
     val infant: Long? = null,
     val passengerCount: Long? = null,
-    val passengerServisableCount: Long? = null,
+    val passenger_servisable_count: Long? = null,
     val version: Long? = null,
-    val isOneWay: Boolean? = null,
-    val isDomestic: Boolean? = null,
-    val isDirect: Boolean? = null,
-    val isRefundable: Boolean? = null,
-    val flightClass: String? = null
+    val is_One_way: Boolean? = null,
+    val is_domestic: Boolean? = null,
+    val is_direct: Boolean? = null,
+    val is_refundable: Boolean? = null,
+    val flight_class: String? = null
 )

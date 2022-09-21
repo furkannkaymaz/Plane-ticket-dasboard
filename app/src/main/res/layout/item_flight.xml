@@ -45,20 +45,20 @@
         android:layout_height="25dp"
         android:src="@drawable/ic_next"
         android:tint="#4CAF50"
-        app:layout_constraintBottom_toBottomOf="@id/price"
+        app:layout_constraintBottom_toBottomOf="@id/tvPrice"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/price"
+        app:layout_constraintTop_toTopOf="@id/tvPrice"
         tools:ignore="UseAppTint" />
 
     <TextView
-        android:id="@+id/price"
+        android:id="@+id/tvPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginEnd="10dp"
         android:fontFamily="@font/averta_bold"
         android:gravity="center"
-        android:text="Price"
+        android:text="tvPrice"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/IvNext"
         app:layout_constraintTop_toTopOf="@id/tvDeparture" />
@@ -68,7 +68,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toStartOf="@+id/price"
+        app:layout_constraintEnd_toStartOf="@+id/tvPrice"
         app:layout_constraintStart_toEndOf="@+id/tvDeparture"
         app:layout_constraintTop_toTopOf="@id/tvDeparture">
 
@@ -129,7 +129,7 @@
         app:layout_constraintTop_toTopOf="@id/ivDetail" />
 
     <TextView
-        android:id="@+id/baggage"
+        android:id="@+id/tvBaggage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
