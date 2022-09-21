@@ -13,6 +13,7 @@ import com.commerce.data.model.Airline
 import com.commerce.databinding.FragmentHomeBinding
 import com.commerce.ui.home.adapter.HomeAdapter
 import com.commerce.ui.home.viewmodel.HomeViewModel
+import com.commerce.utils.checkArray
 import com.commerce.utils.extension.toast
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -36,10 +37,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
     override fun observerData() {
         super.observerData()
         viewModel.getData.observe(viewLifecycleOwner) {
-            passAirlineData(it?.data?.airlines)
-            adapter.set(it?.data?.flights?.departure)
-            adapter.notifyDataSetChanged()
-
+            if (checkArray(arrayListOf(it))){
+                passAirlineData(it?.data?.airlines)
+                adapter.set(it?.data?.flights?.departure)
+                adapter.notifyDataSetChanged()
+            }
         }
         viewModel.error.observe(viewLifecycleOwner) {
             context?.toast(getString(R.string.unExpectedError))
@@ -52,7 +54,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
             }
         }
     }
-
 
     private fun tabLayoutConfigure() {
         binding?.tbDate?.newTab()?.setText("Önceki Gün \n 1.450 TL")
