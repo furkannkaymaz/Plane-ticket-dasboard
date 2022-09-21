@@ -19,13 +19,14 @@ class HomeAdapter(
 
         with(holder.binding) {
 
-            if (item.infos?.baggage_info?.first_baggage_collection.isNullOrEmpty()){
+            if (!item.infos?.baggage_info?.firstBaggageCollection.isNullOrEmpty()){
                this.tvBaggage.text = "El Bagajı"
             }else{
-                this.tvBaggage.text = item.infos?.baggage_info?.first_baggage_collection?.first()?.allowance.toString() + "kg/kişi"
+                this.tvBaggage.text = item.infos?.baggage_info?.firstBaggageCollection?.first()?.allowance.toString() + "kg/kişi"
             }
 
             tvPrice.text = "${item.price_breakdown?.total} TL "
+            holder.binding.tvFlyType.text = "Direkt Uçuş"
 
         }
 

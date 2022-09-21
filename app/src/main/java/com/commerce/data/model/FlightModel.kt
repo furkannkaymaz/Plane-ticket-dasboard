@@ -159,7 +159,7 @@ data class Infos (
 
 data class BaggageInfo (
     val carry_on: CarryOn? = null,
-    val first_baggage_collection: List<FirstBaggageCollection>? = null
+    val firstBaggageCollection: List<FirstBaggageCollection>? = null
 )
 
 data class CarryOn (

@@ -5,7 +5,10 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="10dp">
+    android:layout_marginVertical="5dp"
+    android:background="@drawable/rounded_shadow"
+    android:paddingHorizontal="7dp"
+    android:paddingVertical="5dp">
 
     <ImageView
         android:id="@+id/ivCompany"
@@ -115,7 +118,7 @@
         tools:ignore="UseAppTint" />
 
     <TextView
-        android:id="@+id/flyType"
+        android:id="@+id/tvFlyType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -138,7 +141,7 @@
         android:gravity="center"
         android:text="Baggage"
         app:layout_constraintBottom_toBottomOf="@+id/ivDetail"
-        app:layout_constraintStart_toEndOf="@+id/flyType"
+        app:layout_constraintStart_toEndOf="@+id/tvFlyType"
         app:layout_constraintTop_toTopOf="@id/ivDetail" />
 
 
