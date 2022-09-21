@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.commerce.data.model.FlightModel
 import com.commerce.data.repository.HomeRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -29,6 +30,8 @@ class HomeViewModel @Inject constructor(private val home: HomeRepository) : View
    suspend fun getData(context: Context) = viewModelScope.launch {
 
         val response = home.getData(context)
+
+       _isLoading.value = false
 
         if (response.data != null) {
             _getData.postValue(response)

@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.commerce.R
 import com.commerce.base.BaseFragment
 import com.commerce.data.model.Airline
 import com.commerce.databinding.FragmentHomeBinding
@@ -82,7 +81,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
             RecyclerView.VERTICAL,
             false
         )
-
     }
 
     private fun passAirlineData(airline: ArrayList<Airline?>?) {
