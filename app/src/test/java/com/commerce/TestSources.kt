@@ -50,8 +50,12 @@ class TestSources {
 
     @Test
     fun editImageUrlLinkReturnTrue() {
-        val result = editImageUrl("https:\\/\\/www.enuygun.com\\/ucak-bileti\\/assets\\/images\\/airline-icon\\/PC.png")
-        assertEquals(result, "https://www.enuygun.com/ucak-bileti/assets/images/airline-icon/PC.png")
+        val result =
+            editImageUrl("https:\\/\\/www.enuygun.com\\/ucak-bileti\\/assets\\/images\\/airline-icon\\/PC.png")
+        assertEquals(
+            result,
+            "https://www.enuygun.com/ucak-bileti/assets/images/airline-icon/PC.png"
+        )
     }
 
 

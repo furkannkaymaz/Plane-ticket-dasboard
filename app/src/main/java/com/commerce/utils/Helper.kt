@@ -2,7 +2,6 @@ package com.commerce.utils
 
 import com.commerce.data.model.FlightModel
 
-
 fun checkString(s: String?): Boolean {
     if (s == null || s == "") {
         return false
@@ -17,7 +16,7 @@ fun checkArray(a: ArrayList<FlightModel?>?): Boolean {
     return true
 }
 
-fun editImageUrl(s : String) : String{
+fun editImageUrl(s: String): String {
     return s.replace("\\", "")
 }
 

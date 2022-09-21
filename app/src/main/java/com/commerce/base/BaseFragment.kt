@@ -8,14 +8,14 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBinding
 
-abstract class BaseFragment<VB: ViewBinding, VM: ViewModel> : Fragment() {
+abstract class BaseFragment<VB : ViewBinding, VM : ViewModel> : Fragment() {
 
     private var _binding: VB? = null
     val binding get() = _binding
 
     abstract val viewModel: VM
 
-    open fun observerData(){}
+    open fun observerData() {}
     abstract fun configureUiItems()
     abstract fun onCreateFinished()
 

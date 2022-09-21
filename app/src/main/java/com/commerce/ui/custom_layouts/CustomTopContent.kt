@@ -15,7 +15,7 @@ class CustomTopContent(context: Context, attrs: AttributeSet? = null) :
 
     override fun viewCreated(attrs: AttributeSet?) {}
 
-    fun setRouteText(text: String){
+    fun setRouteText(text: String) {
         binding.tvRoute.text = text
     }
 }

@@ -6,7 +6,8 @@ import android.view.LayoutInflater
 import android.widget.LinearLayout
 import androidx.viewbinding.ViewBinding
 
-abstract class BaseLinearLayout<VB: ViewBinding>(context: Context, attrs: AttributeSet? = null) : LinearLayout(context, attrs) {
+abstract class BaseLinearLayout<VB : ViewBinding>(context: Context, attrs: AttributeSet? = null) :
+    LinearLayout(context, attrs) {
 
     lateinit var binding: VB
 
