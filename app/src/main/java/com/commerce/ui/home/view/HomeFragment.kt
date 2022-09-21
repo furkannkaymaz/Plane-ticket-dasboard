@@ -2,6 +2,7 @@ package com.commerce.ui.home.view
 
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -44,7 +45,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
             context?.toast(getString(R.string.unExpectedError))
         }
         viewModel.isLoading.observe(viewLifecycleOwner) {
-
+            if (it == false) {
+                binding?.flContainer?.visibility = View.GONE
+            } else {
+                binding?.flContainer?.visibility = View.VISIBLE
+            }
         }
     }
 
@@ -54,7 +59,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
             ?.let { binding?.tbDate?.addTab(it) }
         binding?.tbDate?.newTab()?.setText("28 Haz Sal \n 1.450 TL")
             ?.let { binding?.tbDate?.addTab(it) }
-        binding?.tbDate?.newTab()?.setText("Sonraki Gün \n 1.450 TL")
+        binding?.tbDate?.newTab()?.setText("Sonraki Gün 1.450 TL")
             ?.let { binding?.tbDate?.addTab(it) }
     }
 

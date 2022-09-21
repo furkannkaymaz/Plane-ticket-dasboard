@@ -5,10 +5,10 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingVertical="10dp"
     android:layout_marginVertical="8dp"
     android:background="@drawable/rounded_shadow"
-    android:paddingHorizontal="8dp">
+    android:paddingHorizontal="8dp"
+    android:paddingVertical="10dp">
 
     <ImageView
         android:id="@+id/ivCompany"
@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:fontFamily="@font/averta_semibold"
         android:gravity="center"
         app:layout_constraintStart_toStartOf="@+id/ivCompany"
@@ -100,17 +100,39 @@
 
     </LinearLayout>
 
-
-    <ImageView
-        android:id="@+id/ivDetail"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/appbg"
         android:layout_marginTop="10dp"
-        android:src="@drawable/ic_detail"
-        android:tint="#636262"
+        android:id="@+id/view"
+        app:layout_constraintEnd_toEndOf="@id/IvNext"
+        app:layout_constraintStart_toStartOf="@id/flIvDetail"
+        app:layout_constraintTop_toBottomOf="@id/IvNext" />
+
+
+    <FrameLayout
+        android:id="@+id/flIvDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/rounded_btn"
+        android:backgroundTint="@color/appbg"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/tvDeparture"
-        app:layout_constraintTop_toBottomOf="@id/tvDeparture"
-        tools:ignore="UseAppTint" />
+        app:layout_constraintTop_toBottomOf="@id/view">
+
+
+        <ImageView
+            android:id="@+id/ivDetail"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_detail"
+            app:tint="#636262" />
+
+    </FrameLayout>
+
+
 
     <TextView
         android:id="@+id/tvFlyType"
@@ -121,9 +143,9 @@
         android:fontFamily="@font/averta_semibold"
         android:gravity="center"
         android:textColor="@color/ivGreen"
-        app:layout_constraintBottom_toBottomOf="@+id/ivDetail"
-        app:layout_constraintStart_toEndOf="@+id/ivDetail"
-        app:layout_constraintTop_toTopOf="@id/ivDetail" />
+        app:layout_constraintBottom_toBottomOf="@+id/flIvDetail"
+        app:layout_constraintStart_toEndOf="@+id/flIvDetail"
+        app:layout_constraintTop_toTopOf="@id/flIvDetail" />
 
     <TextView
         android:id="@+id/tvBaggage"
@@ -133,9 +155,9 @@
         android:layout_marginStart="20dp"
         android:fontFamily="@font/averta_semibold"
         android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="@+id/ivDetail"
+        app:layout_constraintBottom_toBottomOf="@+id/flIvDetail"
         app:layout_constraintStart_toEndOf="@+id/tvFlyType"
-        app:layout_constraintTop_toTopOf="@id/ivDetail" />
+        app:layout_constraintTop_toTopOf="@id/flIvDetail" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
