@@ -101,11 +101,11 @@
     </LinearLayout>
 
     <View
+        android:id="@+id/view"
         android:layout_width="0dp"
         android:layout_height="1dp"
-        android:background="@color/appbg"
         android:layout_marginTop="10dp"
-        android:id="@+id/view"
+        android:background="@color/appbg"
         app:layout_constraintEnd_toEndOf="@id/IvNext"
         app:layout_constraintStart_toStartOf="@id/flIvDetail"
         app:layout_constraintTop_toBottomOf="@id/IvNext" />
@@ -133,7 +133,6 @@
     </FrameLayout>
 
 
-
     <TextView
         android:id="@+id/tvFlyType"
         android:layout_width="wrap_content"
@@ -142,21 +141,47 @@
         android:layout_marginStart="10dp"
         android:fontFamily="@font/averta_semibold"
         android:gravity="center"
+        android:text="asdfasdf"
         android:textColor="@color/ivGreen"
         app:layout_constraintBottom_toBottomOf="@+id/flIvDetail"
         app:layout_constraintStart_toEndOf="@+id/flIvDetail"
         app:layout_constraintTop_toTopOf="@id/flIvDetail" />
+
+    <ImageView
+        android:id="@+id/ivDot"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginHorizontal="5dp"
+
+        android:src="@drawable/ic_brightness"
+        app:layout_constraintBottom_toBottomOf="@id/tvFlyType"
+        app:layout_constraintEnd_toStartOf="@id/ivBaggage"
+        app:layout_constraintStart_toEndOf="@id/tvFlyType"
+        app:layout_constraintTop_toTopOf="@id/tvFlyType"
+        app:tint="@color/appbg" />
+
+    <ImageView
+        android:id="@+id/ivBaggage"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/ic_shopping_bag"
+        android:tint="@color/appbg"
+        app:layout_constraintBottom_toBottomOf="@id/tvFlyType"
+        app:layout_constraintStart_toEndOf="@id/ivDot"
+        app:layout_constraintTop_toTopOf="@id/tvFlyType" />
 
     <TextView
         android:id="@+id/tvBaggage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginStart="20dp"
         android:fontFamily="@font/averta_semibold"
         android:gravity="center"
+        android:text="asfasf"
         app:layout_constraintBottom_toBottomOf="@+id/flIvDetail"
-        app:layout_constraintStart_toEndOf="@+id/tvFlyType"
+        app:layout_constraintStart_toEndOf="@+id/ivBaggage"
         app:layout_constraintTop_toTopOf="@id/flIvDetail" />
 
 

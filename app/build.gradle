@@ -96,7 +96,6 @@ dependencies {
     // splash
     implementation 'androidx.core:core-splashscreen:1.0.0-beta02'
 
-
     //Test
     androidTestImplementation("androidx.navigation:navigation-testing:2.5.2")
     androidTestImplementation "com.google.truth:truth:1.0.1"

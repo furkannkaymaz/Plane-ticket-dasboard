@@ -21,12 +21,12 @@
         android:id="@+id/tvRoute"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="22dp"
         android:fontFamily="@font/averta_semibold"
         android:padding="5dp"
         android:text="İstanbul  >  Amsterdam"
         android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@id/tvOneOrTwoDirection"
         app:layout_constraintStart_toEndOf="@id/ivBack"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,19 +35,29 @@
         android:id="@+id/tvOneOrTwoDirection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+
         android:padding="5dp"
         android:text="Tek yön"
         android:textColor="@color/black"
         android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/ivBack"
+        app:layout_constraintStart_toStartOf="@id/tvRoute"
         app:layout_constraintTop_toBottomOf="@id/tvRoute" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@color/appbg"
+        app:layout_constraintBottom_toBottomOf="@id/tvOneOrTwoDirection"
+        app:layout_constraintStart_toEndOf="@id/tvOneOrTwoDirection"
+        app:layout_constraintEnd_toStartOf="@id/ivPersonCount"
+        app:layout_constraintTop_toTopOf="@id/tvOneOrTwoDirection" />
 
     <ImageView
         android:id="@+id/ivPen"
-        android:layout_width="13dp"
-        android:layout_height="13dp"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
         android:scaleType="fitCenter"
         android:src="@drawable/ic_edit"
         app:layout_constraintBottom_toBottomOf="@id/tvRoute"
@@ -82,7 +92,7 @@
         android:id="@+id/flIvShare"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/rounded_btn"
         android:backgroundTint="@color/appbg"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -91,9 +101,8 @@
 
         <ImageView
             android:id="@+id/ivShare"
-            android:layout_width="33dp"
-            android:layout_height="33dp"
-
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:scaleType="center"
             android:src="@drawable/ic_share"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -103,9 +112,10 @@
     </FrameLayout>
 
     <FrameLayout
+        android:id="@+id/flIvLike"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_marginEnd="15dp"
         android:background="@drawable/rounded_btn"
         android:backgroundTint="@color/appbg"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -114,8 +124,8 @@
 
         <ImageView
             android:id="@+id/ivLike"
-            android:layout_width="33dp"
-            android:layout_height="33dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:scaleType="center"
             android:src="@drawable/ic_fav" />
 

@@ -1,4 +1,4 @@
-package com.commerce.custom_layouts
+package com.commerce.ui.custom_layouts
 
 import android.content.Context
 import android.util.AttributeSet
@@ -13,7 +13,9 @@ class CustomTopContent(context: Context, attrs: AttributeSet? = null) :
         return CustomTopcontentBinding.inflate(inflater, this, true)
     }
 
-    override fun viewCreated(attrs: AttributeSet?) {
+    override fun viewCreated(attrs: AttributeSet?) {}
 
+    fun setRouteText(text: String){
+        binding.tvRoute.text = text
     }
 }

@@ -26,7 +26,7 @@ class HomeViewModel @Inject constructor(private val home: HomeRepository) : View
     val error: LiveData<String>
         get() = _error
 
-    fun getData(context: Context) = viewModelScope.launch {
+   suspend fun getData(context: Context) = viewModelScope.launch {
 
         val response = home.getData(context)
 
@@ -34,7 +34,7 @@ class HomeViewModel @Inject constructor(private val home: HomeRepository) : View
             _getData.postValue(response)
             _isLoading.value = false
         } else {
-            _error.postValue("Hata")
+            _error.postValue("Bir Hata oluştu")
             _isLoading.value = true
         }
     }

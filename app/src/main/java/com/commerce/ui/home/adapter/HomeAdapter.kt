@@ -1,5 +1,6 @@
 package com.commerce.ui.home.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,7 +9,6 @@ import com.commerce.R
 import com.commerce.base.BaseAdapter
 import com.commerce.data.model.Airline
 import com.commerce.data.model.Departure
-import com.commerce.data.model.FlightModel
 import com.commerce.databinding.ItemFlightBinding
 import com.commerce.utils.checkString
 import com.commerce.utils.editImageUrl
@@ -16,11 +16,11 @@ import com.commerce.utils.extension.decode
 import com.commerce.utils.extension.loadImage
 
 class HomeAdapter(
-    private val itemClick: ((FlightModel) -> Unit)?,
     private val airlines: ArrayList<Airline?>? = null
 ) :
     BaseAdapter<Departure, HomeAdapter.ViewHolder>() {
 
+    @SuppressLint("SetTextI18n")
     override fun bindView(holder: ViewHolder, position: Int, item: Departure) {
 
         with(holder.binding) {
@@ -49,7 +49,6 @@ class HomeAdapter(
                 it?.image?.let { holder.binding.ivCompany.loadImage(editImageUrl(it)) }
             }
         }
-
 
         holder.binding.container.setOnClickListener {}
 

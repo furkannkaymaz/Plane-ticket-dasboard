@@ -1,6 +1,5 @@
 package com.commerce.ui.home.view
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +15,9 @@ import com.commerce.ui.home.viewmodel.HomeViewModel
 import com.commerce.utils.checkArray
 import com.commerce.utils.extension.toast
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
@@ -30,8 +32,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
     }
 
     override fun onCreateFinished() {
-        viewModel.getData(requireActivity())
 
+        CoroutineScope(Dispatchers.Main).launch {
+            viewModel.getData(requireActivity())
+        }
     }
 
     override fun observerData() {
@@ -40,11 +44,19 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
             if (checkArray(arrayListOf(it))) {
                 passAirlineData(it?.data?.airlines)
                 adapter.set(it?.data?.flights?.departure)
+                topContentConfigure(
+                    "${
+                        it?.data?.flights?.departure?.get(0)?.segments?.get(
+                            0
+                        )?.origin
+                    } > ${it?.data?.flights?.departure?.get(0)?.segments?.get(0)?.destination}"
+                )
                 adapter.notifyDataSetChanged()
+
             }
         }
         viewModel.error.observe(viewLifecycleOwner) {
-            context?.toast(getString(R.string.unExpectedError))
+            context?.toast(it)
         }
         viewModel.isLoading.observe(viewLifecycleOwner) {
             if (it == false) {
@@ -74,8 +86,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
     }
 
     private fun passAirlineData(airline: ArrayList<Airline?>?) {
-        adapter = HomeAdapter({}, airline)
+        adapter = HomeAdapter(airline)
         binding?.rvFlights?.adapter = adapter
+    }
+
+    private fun topContentConfigure(sRoute: String) {
+        binding?.contentTop?.setRouteText(sRoute)
     }
 
     override fun layoutResource(
