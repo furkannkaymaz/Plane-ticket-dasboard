@@ -33,16 +33,4 @@ class SettingsActivityTest {
         hiltRule.inject()
     }
 
-    @Test
-    fun testNavigation() {
-
-        val mockNavController = mock(NavController::class.java)
-
-        launchFragmentInContainer<HomeFragment>().onFragment {
-            Navigation.setViewNavController(it.requireView(), mockNavController)
-        }
-        //   Espresso.onView(ViewMatchers.withId(R.id.btnGoSecond)).perform(ViewActions.click())
-        //   verify(mockNavController).navigate(FragmentDirections.actionFragment())
-        //   use 2 line to check navigate navController
-    }
 }

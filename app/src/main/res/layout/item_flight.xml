@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/ivCompany"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAirlines"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/averta_semibold"
+        android:gravity="center"
+        android:text="Hava Yolu"
+        app:layout_constraintStart_toEndOf="@+id/ivCompany"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDeparture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/averta_semibold"
+        android:gravity="center"
+        android:text="SAW > AMS"
+        app:layout_constraintStart_toStartOf="@+id/ivCompany"
+        app:layout_constraintTop_toBottomOf="@id/ivCompany" />
+
+
+    <ImageView
+        android:id="@+id/IvNext"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/ic_next"
+        android:tint="#4CAF50"
+        app:layout_constraintBottom_toBottomOf="@id/price"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/price"
+        tools:ignore="UseAppTint" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/averta_bold"
+        android:gravity="center"
+        android:text="Price"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/IvNext"
+        app:layout_constraintTop_toTopOf="@id/tvDeparture" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/price"
+        app:layout_constraintStart_toEndOf="@+id/tvDeparture"
+        app:layout_constraintTop_toTopOf="@id/tvDeparture">
+
+        <TextView
+            android:id="@+id/tvDepartureTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/averta_bold"
+            android:gravity="center"
+            android:text="Time"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/ivArrowTime"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginHorizontal="5dp"
+            android:src="@drawable/ic_arrow"
+            android:tint="@color/black"
+            tools:ignore="UseAppTint" />
+
+        <TextView
+            android:id="@+id/arrivalTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10dp"
+            android:gravity="center"
+            android:text="Time" />
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/ivDetail"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_detail"
+        android:tint="#636262"
+        app:layout_constraintStart_toStartOf="@+id/tvDeparture"
+        app:layout_constraintTop_toBottomOf="@id/tvDeparture"
+        tools:ignore="UseAppTint" />
+
+    <TextView
+        android:id="@+id/flyType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/averta_semibold"
+        android:gravity="center"
+        android:text="Type"
+        android:textColor="@color/ivGreen"
+        app:layout_constraintBottom_toBottomOf="@+id/ivDetail"
+        app:layout_constraintStart_toEndOf="@+id/ivDetail"
+        app:layout_constraintTop_toTopOf="@id/ivDetail" />
+
+    <TextView
+        android:id="@+id/baggage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/averta_semibold"
+        android:gravity="center"
+        android:text="Baggage"
+        app:layout_constraintBottom_toBottomOf="@+id/ivDetail"
+        app:layout_constraintStart_toEndOf="@+id/flyType"
+        app:layout_constraintTop_toTopOf="@id/ivDetail" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

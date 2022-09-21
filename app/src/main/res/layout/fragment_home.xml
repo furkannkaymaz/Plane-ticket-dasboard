@@ -42,20 +42,33 @@
             android:id="@+id/llContainer"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:orientation="horizontal"
             android:weightSum="4"
-            android:layout_marginTop="5dp"
             app:layout_constraintEnd_toStartOf="@id/ivNotification"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tbDate">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="10dp"
                 android:layout_weight="2"
                 android:background="@drawable/rounded_btn"
-                android:layout_marginHorizontal="10dp"
+                android:gravity="center"
                 android:paddingVertical="10dp">
+
+                <ImageView
+                    android:id="@+id/ivSort"
+                    android:layout_width="22dp"
+                    android:layout_height="20dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_person"
+                    app:layout_constraintBottom_toBottomOf="@id/tvSort"
+                    app:layout_constraintEnd_toStartOf="@id/tvSort"
+                    app:layout_constraintTop_toTopOf="@id/tvSort"
+                    app:tint="@color/white" />
 
                 <TextView
                     android:id="@+id/tvSort"
@@ -71,26 +84,28 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_weight="2"
+                android:background="@drawable/rounded_btn"
+                android:gravity="center"
+                android:paddingVertical="10dp">
+
                 <ImageView
-                    android:id="@+id/ivSort"
+                    android:id="@+id/ivFilter"
                     android:layout_width="22dp"
                     android:layout_height="20dp"
                     android:scaleType="fitCenter"
                     android:src="@drawable/ic_person"
-                    app:layout_constraintBottom_toBottomOf="@id/tvSort"
-                    app:layout_constraintEnd_toStartOf="@id/tvSort"
-                    app:layout_constraintTop_toTopOf="@id/tvSort"
+                    app:layout_constraintBottom_toBottomOf="@id/tvFilter"
+                    app:layout_constraintEnd_toStartOf="@id/tvFilter"
+                    app:layout_constraintTop_toTopOf="@id/tvFilter"
                     app:tint="@color/white" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:background="@drawable/rounded_btn"
-                android:layout_marginHorizontal="10dp"
-                android:paddingVertical="10dp">
 
                 <TextView
                     android:id="@+id/tvFilter"
@@ -106,18 +121,8 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <ImageView
-                    android:id="@+id/ivFilter"
-                    android:layout_width="22dp"
-                    android:layout_height="20dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/ic_person"
-                    app:layout_constraintBottom_toBottomOf="@id/tvFilter"
-                    app:layout_constraintEnd_toStartOf="@id/tvFilter"
-                    app:layout_constraintTop_toTopOf="@id/tvFilter"
-                    app:tint="@color/white" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
 
         </LinearLayout>
 

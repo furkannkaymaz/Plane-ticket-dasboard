@@ -36,13 +36,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
         }
     }
 
-    fun tabLayoutConfigure() {
-        binding?.tbDate?.newTab()?.setText("Önceki Gün \n 1.450 TL")
-            ?.let { binding?.tbDate?.addTab(it) };
-        binding?.tbDate?.newTab()?.setText("28 Haz Sal \n 1.450 TL")
-            ?.let { binding?.tbDate?.addTab(it) };
-        binding?.tbDate?.newTab()?.setText("Sonraki Gün \n 1.450 TL")
-            ?.let { binding?.tbDate?.addTab(it) };
+    private fun tabLayoutConfigure() {
+        binding?.tbDate?.apply {
+            newTab().text = "Önceki Gün \n 1.450 TL"
+            newTab().text = "28 Haz Sal \n 1.450 TL"
+            newTab().text = "Sonraki Gün \n 1.450 TL"
+        }
     }
 
     override fun layoutResource(
