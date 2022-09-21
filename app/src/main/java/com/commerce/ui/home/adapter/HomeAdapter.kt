@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.commerce.base.BaseAdapter
-import com.commerce.data.model.DepartureElement
+import com.commerce.data.model.Departure
 import com.commerce.data.model.FlightModel
 import com.commerce.data.model.Flights
 import com.commerce.databinding.ItemFlightBinding
@@ -13,13 +13,13 @@ import com.commerce.databinding.ItemFlightBinding
 class HomeAdapter(
     private val itemClick: ((FlightModel) -> Unit)?
 ) :
-    BaseAdapter<DepartureElement, HomeAdapter.ViewHolder>() {
+    BaseAdapter<Departure, HomeAdapter.ViewHolder>() {
 
-    override fun bindView(holder: ViewHolder, position: Int, item: DepartureElement) {
+    override fun bindView(holder: ViewHolder, position: Int, item: Departure) {
 
         with(holder.binding) {
 
-            if (!item.infos?.baggage_info?.firstBaggageCollection.isNullOrEmpty()){
+            if (item.infos?.baggage_info?.firstBaggageCollection.isNullOrEmpty()){
                this.tvBaggage.text = "El Bagajı"
             }else{
                 this.tvBaggage.text = item.infos?.baggage_info?.firstBaggageCollection?.first()?.allowance.toString() + "kg/kişi"
